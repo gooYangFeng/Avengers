@@ -16,7 +16,7 @@ import android.widget.TextView;
 import java.util.List;
 
 import butterknife.ButterKnife;
-import butterknife.InjectView;
+import butterknife.Bind;
 import saulmm.avengers.R;
 import saulmm.avengers.model.Character;
 import saulmm.avengers.views.RecyclerClickListener;
@@ -58,13 +58,13 @@ public class AvengersListAdapter extends RecyclerView.Adapter<AvengersListAdapte
 
     public class AvengerViewHolder extends RecyclerView.ViewHolder {
 
-        @InjectView(R.id.item_avenger_title) TextView avengerTitleTextView;
-        @InjectView(R.id.item_avenger_thumb) ImageView avengerThumbImageView;
+        @Bind(R.id.item_avenger_title) TextView avengerTitleTextView;
+        @Bind(R.id.item_avenger_thumb) ImageView avengerThumbImageView;
 
         public AvengerViewHolder(View itemView, final RecyclerClickListener recyclerClickListener) {
 
             super(itemView);
-            ButterKnife.inject(this, itemView);
+            ButterKnife.bind(this, itemView);
             bindListener(itemView, recyclerClickListener);
         }
 

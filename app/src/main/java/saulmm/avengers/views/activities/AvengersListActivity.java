@@ -16,7 +16,7 @@ import java.util.List;
 import javax.inject.Inject;
 
 import butterknife.ButterKnife;
-import butterknife.InjectView;
+import butterknife.Bind;
 import saulmm.avengers.AvengersApplication;
 import saulmm.avengers.R;
 import saulmm.avengers.injector.components.DaggerAvengersComponent;
@@ -33,8 +33,8 @@ public class AvengersListActivity extends AppCompatActivity
 
     public final static String EXTRA_CHARACTER_ID = "character_id";
 
-    @InjectView(R.id.activity_avengers_recycler) RecyclerView mAvengersRecycler;
-    @InjectView(R.id.activity_avengers_toolbar) Toolbar mAvengersToolbar;
+    @Bind(R.id.activity_avengers_recycler) RecyclerView mAvengersRecycler;
+    @Bind(R.id.activity_avengers_toolbar) Toolbar mAvengersToolbar;
     @Inject AvengersListPresenter mAvengersListPresenter;
 
     @Override
@@ -42,7 +42,7 @@ public class AvengersListActivity extends AppCompatActivity
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_avengers_list);
-        ButterKnife.inject(this);
+        ButterKnife.bind(this);
 
         initializeToolbar();
         initializeRecyclerView();

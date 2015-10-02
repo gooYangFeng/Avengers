@@ -25,7 +25,7 @@ import com.bumptech.glide.Glide;
 import javax.inject.Inject;
 
 import butterknife.ButterKnife;
-import butterknife.InjectView;
+import butterknife.Bind;
 import butterknife.OnClick;
 import saulmm.avengers.AvengersApplication;
 import saulmm.avengers.R;
@@ -38,13 +38,13 @@ import saulmm.avengers.mvp.views.AvengersDetailView;
 
 public class AvengerDetailActivity extends AppCompatActivity implements AvengersDetailView {
 
-    @InjectView(R.id.activity_avenger_detail_progress)      ProgressBar mProgress;
-    @InjectView(R.id.activity_avenger_comics_progress)      ProgressBar mComicsProgress;
-    @InjectView(R.id.activity_avenger_comics_container)     LinearLayout mDetailContainer;
-    @InjectView(R.id.activity_avenger_detail_biography)     TextView mBiographyTextView;
-    @InjectView(R.id.activity_avenger_image)                ImageView mAvengerImageView;
-    @InjectView(R.id.activity_avenger_detail_toolbar)       Toolbar mDetailToolbar;
-    @InjectView(R.id.activity_avenger_detail_colltoolbar)   CollapsingToolbarLayout mDetailCollapsingToolbar;
+    @Bind(R.id.activity_avenger_detail_progress)      ProgressBar mProgress;
+    @Bind(R.id.activity_avenger_comics_progress)      ProgressBar mComicsProgress;
+    @Bind(R.id.activity_avenger_comics_container)     LinearLayout mDetailContainer;
+    @Bind(R.id.activity_avenger_detail_biography)     TextView mBiographyTextView;
+    @Bind(R.id.activity_avenger_image)                ImageView mAvengerImageView;
+    @Bind(R.id.activity_avenger_detail_toolbar)       Toolbar mDetailToolbar;
+    @Bind(R.id.activity_avenger_detail_colltoolbar)   CollapsingToolbarLayout mDetailCollapsingToolbar;
 
     @Inject AvengerDetailPresenter avengerDetailPresenter;
 
@@ -55,7 +55,7 @@ public class AvengerDetailActivity extends AppCompatActivity implements Avengers
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_avenger_detail);
-        ButterKnife.inject(this);
+        ButterKnife.bind(this);
 
         initializeToolbar();
         initializeDependencyInjector();
