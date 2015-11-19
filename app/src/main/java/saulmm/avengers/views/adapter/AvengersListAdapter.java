@@ -69,17 +69,14 @@ public class AvengersListAdapter extends RecyclerView.Adapter<AvengersListAdapte
         }
 
         public void bindAvenger(Character character) {
-
             avengerTitleTextView.setText(character.getName());
             avengerThumbImageView.setImageResource(character.getImageResource());
         }
 
         private void bindListener(View itemView, final RecyclerClickListener recyclerClickListener) {
-
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-
                     recyclerClickListener.onElementClick(getPosition());
                 }
             });

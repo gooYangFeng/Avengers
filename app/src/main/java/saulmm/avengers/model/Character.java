@@ -17,7 +17,6 @@ public class Character {
     private String resourceURI;
 
     public Character(String name, int thumb_resource, int id) {
-
         this.name = name;
         this.imageResource = thumb_resource;
         this.id = id;

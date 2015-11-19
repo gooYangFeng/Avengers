@@ -51,24 +51,20 @@ public class AvengersListActivity extends AppCompatActivity
     }
 
     private void initializeToolbar() {
-
         setSupportActionBar(mAvengersToolbar);
     }
 
     @Override
     protected void onStart() {
-
         super.onStart();
         mAvengersListPresenter.onStart();
     }
 
     private void initializePresenter() {
-
         mAvengersListPresenter.attachView(this);
     }
 
     private void initializeDependencyInjector() {
-
         AvengersApplication avengersApplication = (AvengersApplication) getApplication();
 
         DaggerAvengersComponent.builder()
@@ -79,14 +75,12 @@ public class AvengersListActivity extends AppCompatActivity
     }
 
     private void initializeRecyclerView() {
-
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
         mAvengersRecycler.setLayoutManager(linearLayoutManager);
     }
 
     @Override
     public void showAvengersList(List<Character> avengers) {
-
         AvengersListAdapter avengersListAdapter = new AvengersListAdapter(avengers, this, mAvengersListPresenter);
         mAvengersRecycler.setAdapter(avengersListAdapter);
     }
