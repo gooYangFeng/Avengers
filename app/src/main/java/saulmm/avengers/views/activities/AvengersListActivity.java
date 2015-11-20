@@ -17,14 +17,13 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-import butterknife.Bind;
-import butterknife.BindDimen;
-import butterknife.ButterKnife;
+
 import java.util.List;
+
 import javax.inject.Inject;
 
-import butterknife.ButterKnife;
 import butterknife.Bind;
+import butterknife.ButterKnife;
 import saulmm.avengers.AvengersApplication;
 import saulmm.avengers.R;
 import saulmm.avengers.Utils;
@@ -43,7 +42,6 @@ public class AvengersListActivity extends AppCompatActivity
     public final static String EXTRA_CHARACTER_ID           = "character_id";
     public final static String EXTRA_CHARACTER_NAME         = "character_name";
     public final static String EXTRA_IMAGE_TRANSITION_NAME  = "transition_name";
-    public final static int KEY_SHARED_BITMAP               = 41;
 
     @Bind(R.id.activity_avengers_recycler)        RecyclerView mAvengersRecycler;
     @Bind(R.id.activity_avengers_toolbar)         Toolbar mAvengersToolbar;
@@ -116,9 +114,9 @@ public class AvengersListActivity extends AppCompatActivity
     @Override
     public void showCharacterList() {
         if (mAvengersRecycler.getVisibility() == View.GONE ||
-            mAvengersRecycler.getVisibility() == View.INVISIBLE)
-
+            mAvengersRecycler.getVisibility() == View.INVISIBLE) {
             mAvengersRecycler.setVisibility(View.VISIBLE);
+        }
     }
 
     @Override
@@ -134,20 +132,26 @@ public class AvengersListActivity extends AppCompatActivity
 
     @Override
     public void showLoadingMoreCharactersIndicator() {
-        mLoadingMoreCharactersSnack = Snackbar.make(mAvengersRecycler,
-            getString(R.string.message_loading_more_characters), Snackbar.LENGTH_INDEFINITE);
+        if (null == mLoadingMoreCharactersSnack) {
+            mLoadingMoreCharactersSnack = Snackbar.make(mAvengersRecycler,
+                    getString(R.string.message_loading_more_characters), Snackbar.LENGTH_INDEFINITE);
+        }
 
         mLoadingMoreCharactersSnack.show();
     }
 
     @Override
     public void hideLoadingMoreCharactersIndicator() {
-        if (mLoadingMoreCharactersSnack != null) mLoadingMoreCharactersSnack.dismiss();
+        if (mLoadingMoreCharactersSnack != null) {
+            mLoadingMoreCharactersSnack.dismiss();
+        }
     }
 
     @Override
     public void hideLoadingIndicator() {
-        mLoadingMoreCharactersSnack.dismiss();
+        if (mLoadingMoreCharactersSnack != null) {
+            mLoadingMoreCharactersSnack.dismiss();
+        }
     }
 
     @Override
