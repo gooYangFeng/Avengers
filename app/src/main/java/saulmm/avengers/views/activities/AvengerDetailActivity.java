@@ -30,7 +30,6 @@ import butterknife.Bind;
 import butterknife.BindColor;
 import butterknife.BindInt;
 import butterknife.ButterKnife;
-import butterknife.Bind;
 import butterknife.OnClick;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.animation.GlideAnimation;
@@ -48,9 +47,6 @@ import saulmm.avengers.mvp.views.AvengersDetailView;
 import saulmm.avengers.views.utils.AnimUtils;
 
 public class AvengerDetailActivity extends AppCompatActivity implements AvengersDetailView {
-
-    //@Bind(R.id.activity_avenger_image)                ImageView mAvengerImageView;
-    //@Bind(R.id.activity_avenger_detail_toolbar)       Toolbar mDetailToolbar;
     private static final String CHRT_NAME_EXTRA = "extra_character_name";
     @Bind(R.id.activity_avenger_detail_progress)      ProgressBar mProgress;
     @Bind(R.id.activity_avenger_comics_progress)      ProgressBar mComicsProgress;
@@ -72,8 +68,6 @@ public class AvengerDetailActivity extends AppCompatActivity implements Avengers
     @BindColor(R.color.brand_primary_dark)              int mColorPrimaryDark;
 
     @Inject AvengerDetailPresenter avengerDetailPresenter;
-
-    private View comicView;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
