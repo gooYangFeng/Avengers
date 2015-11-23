@@ -15,7 +15,6 @@ import android.support.v7.widget.RecyclerView.OnScrollListener;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import java.util.List;
@@ -45,7 +44,6 @@ public class AvengersListActivity extends AppCompatActivity
 
     @Bind(R.id.activity_avengers_recycler)        RecyclerView mAvengersRecycler;
     @Bind(R.id.activity_avengers_toolbar)         Toolbar mAvengersToolbar;
-    @Bind(R.id.activity_avengers_progress)        ProgressBar mAvengersProgress;
 
     @Bind(R.id.activity_avengers_empty_indicator) View mEmptyIndicator;
     @Bind(R.id.activity_avengers_error_view)      View mErrorView;

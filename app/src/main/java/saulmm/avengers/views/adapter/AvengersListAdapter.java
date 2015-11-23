@@ -13,12 +13,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.bumptech.glide.Glide;
+
+import java.util.List;
+
 import butterknife.Bind;
 import butterknife.BindColor;
 import butterknife.ButterKnife;
-import butterknife.Bind;
-import com.bumptech.glide.Glide;
-import java.util.List;
 import saulmm.avengers.R;
 import saulmm.avengers.Utils;
 import saulmm.avengers.model.entities.Character;
